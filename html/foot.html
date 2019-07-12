@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>足迹</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+	<style type="text/css">
+		html {
+			color: #000;
+			overflow-y: scroll;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%
+		}
+
+		html * {
+			outline: 0;
+			-webkit-text-size-adjust: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+		}
+
+		body {
+			background: #FFF;
+			color: #4a4f5a;
+			font: 400 14px/1.5 "微软雅黑", Helvetica, STHeiti, Droid Sans Fallback;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+
+		body,
+		div,
+		dl,
+		dt,
+		dd,
+		ul,
+		ol,
+		li,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		pre,
+		code,
+		form,
+		fieldset,
+		legend,
+		input,
+		textarea,
+		p,
+		blockquote,
+		th,
+		td,
+		hr,
+		button,
+		article,
+		aside,
+		details,
+		figcaption,
+		figure,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		section {
+			margin: 0;
+			padding: 0
+		}
+
+		input,
+		select,
+		textarea {
+			font-size: 100%
+		}
+
+		article,
+		aside,
+		footer,
+		header,
+		nav,
+		section,
+		audio,
+		canvas,
+		video,
+		img {
+			display: block;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0
+		}
+
+		fieldset,
+		img {
+			border: 0
+		}
+
+		abbr,
+		acronym {
+			border: 0;
+			font-variant: normal
+		}
+
+		del {
+			text-decoration: line-through
+		}
+
+		address,
+		caption,
+		cite,
+		code,
+		dfn,
+		em,
+		th,
+		var {
+			font-style: normal;
+			font-weight: normal
+		}
+
+		ol,
+		ul {
+			list-style: none
+		}
+
+		caption,
+		th {
+			text-align: left
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-size: 100%;
+			font-weight: normal
+		}
+
+		q:before,
+		q:after {
+			content: ''
+		}
+
+		button {
+			outline: 0;
+			border: none;
+		}
+
+		a:hover {
+			text-decoration: none
+		}
+
+		ins,
+		a {
+			text-decoration: none
+		}
+
+		textarea {
+			resize: none;
+		}
+
+		iframe,
+		img {
+			border: 0;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		ul,
+		ol {
+			list-style: none;
+		}
+
+		input,
+		select,
+		textarea {
+			outline: 0;
+			-webkit-user-modify: read-write-plaintext-only;
+		}
+
+		input {
+			-webkit-appearance: none;
+		}
+
+		.pr {
+			position: relative;
+		}
+
+		.abs {
+			position: absolute
+		}
+
+		.fl {
+			float: left;
+			display: inline-block;
+		}
+
+		.fr {
+			float: right;
+			display: inline-block;
+		}
+
+		.clearfix:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+
+		.clearfix {
+			*zoom: 1;
+		}
+
+		.wrap {
+			min-width: 320px;
+			max-width: 768px;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.wrapper03 {
+			position: relative;
+			height: 1rem;
+			width: 100%;
+			overflow: hidden;
+			margin: 0 auto;
+			border-bottom: 1px solid #ccc
+		}
+
+		.wrapper03 .scroller {
+			position: absolute
+		}
+
+		.wrapper03 .scroller li {
+			height: 1rem;
+			color: #333;
+			float: left;
+			line-height: 1rem;
+			font-size: .4rem;
+			text-align: center
+		}
+
+		.wrapper03 .scroller li a {
+			color: #333;
+			display: block;
+			margin: 0 .3rem;
+			padding: 0 .1rem
+		}
+
+		.wrapper03 .scroller li.cur a {
+			color: #1cbb9b;
+			height: .9rem;
+			border-bottom: .1rem solid #1cbb9b
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="wrapper wrapper03" id="wrapper03">
+			<div class="scroller">
+				<ul class="clearfix">
+					<li><a href="javascript:void(0)">全部</a></li>
+					<li><a href="javascript:void(0)">历史沿革</a></li>
+					<li><a href="javascript:void(0)">民俗风情</a></li>
+					<li><a href="javascript:void(0)">传说故事</a></li>
+					<li><a href="javascript:void(0)">古建遗存</a></li>
+					<li><a href="javascript:void(0)">名人传记</a></li>
+					<li><a href="javascript:void(0)">村规民约</a></li>
+					<li><a href="javascript:void(0)">家族族谱</a></li>
+					<li><a href="javascript:void(0)">传统技艺</a></li>
+					<li><a href="javascript:void(0)">古树名木</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 滑动导航 end -->
+
+		<div class="foot_mainbar">
+			<a href="../html/foot_next.html" id="foot_main_img"><img src="../img/9.jpg" style="border-radius:10px;"
+					id="foot_img"></a>
+
+			<a href="../html/foot_next.html" style="display:block;margin-top:-20px;margin-left:255px;"><img
+					src="../img/foot_like.png" style="width:15px;" id="foot_islike">
+			</a>
+
+			<div class="foot_p" style="margin-top:20px;">
+				<a href="../html/foot_next.html" id="foot_main_title">
+					<p style="font-size:120%;display: block;margin-bottom: 10px;margin-left:5%;" id="foot_title">良渚文化村
+					</p>
+				</a>
+
+				<p style="display: block;margin-left:5%;" id="foot_p">被列入《中国世界文化遗产预备名单》</p>
+				<a href="../php/ex1.php" style="display:block;margin-top:-40px;margin-left:245px;"><img
+						src="../img/360.png" style="width:35px;">
+				</a>
+			</div>
+
+		</div>
+
+		<div class="foot_mainbar">
+			<a href="../html/foot_next.html"><img src="../img/5.jpg" style="border-radius:10px;">
+				<a href="../html/foot_next.html" style="display:block;margin-top:-20px;margin-left:255px;"><img
+						src="../img/foot_unlike.png" style="width:15px;"></a>
+				<div class="foot_p" style="margin-top:20px;">
+					<p style="font-size:120%;display: block;margin-bottom: 10px;margin-left:5%;">良渚文化村</p>
+			</a>
+			<p style="display: block;margin-left:5%;">被列入《中国世界文化遗产预备名单》</p>
+			<a href="../php/ex1.php" style="display:block;margin-top:-40px;margin-left:245px;"><img src="../img/360.png"
+					style="width:35px;"></a>
+		</div>
+	</div>
+
+
+	</div>
+	<!-- container end -->
+	<!-- footer -->
+	<!-- vr -->
+	<div class="view" style="margin-top:-25px;">
+		<a href="../php/ex1.php" style="display:block;height: 55px;">
+			<img src="../img/360_vr.png" id="vr_img">
+			<p style="font-size: 80%;color: #189b0b;display:block;margin-left:10px;">VR</p>
+		</a>
+	</div>
+	<!-- vr end -->
+
+	<div id="footer">
+		<!-- <div class="container"> -->
+		<div class="town" class="foot">
+			<a href="../html/home.html" style="display:block;height: 55px;"><img src="../img/town.png" class="foot_img">
+				<p style="color: #189b0b" class="home_p">故乡</p>
+			</a>
+		</div>
+		<div class="essay" class="foot">
+			<a href="../html/essay.html" style="display:block;height: 55px;"><img src="../img/essay.png"
+					class="foot_img">
+				<p style="color: #189b0b" class="home_p">文章</p>
+			</a>
+		</div>
+
+		<div class="collection" class="foot">
+			<a href="../html/foot.html" style="display:block;height: 55px;"><img src="../img/collection.png"
+					class="foot_img">
+				<p style="color: #189b0b" class="home_p">足迹</p>
+			</a>
+		</div>
+		<div class="mine" class="foot">
+			<a href="../html/mine.html" style="display:block;height: 55px;"><img src="../img/mine.png" class="foot_img">
+				<p style="color: #189b0b" class="home_p">我的</p>
+			</a>
+		</div>
+	</div>
+	<!-- </div> -->
+	<!--foot end-->
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/flexible.js"></script>
+	<script type="text/javascript" src="../js/iscroll.js"></script>
+	<script type="text/javascript" src="../js/navbarscroll.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			//demo示例一到四 通过lass调取，一句可以搞定，用于页面中可能有多个导航的情况
+			$('.wrapper').navbarscroll();
+		});
+	</script>
+    <div class="sidebar"></div>
+</body>
+<script src="../js/foot.js"></script>
+
+</html>
