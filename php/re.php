@@ -20,11 +20,7 @@
     // $con=mysqli_fetch_row($res);
     // echo $con[0];
     if ($conn->query($sqll) === TRUE){
-<<<<<<< HEAD
-        echo "1";
-=======
         echo $_SESSION["title"];
->>>>>>> c416b68e99b5e201d2d3ecf26b8c82822d77ce8c
     }
     else{
         echo "0";

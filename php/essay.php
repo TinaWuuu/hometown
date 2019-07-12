@@ -1,10 +1,6 @@
 <?php
     include("conn.php");
-<<<<<<< HEAD
-    $sql="select title,image,date,browse,comment
-=======
     $sql="select title,image,date,collect,browse,comment
->>>>>>> c416b68e99b5e201d2d3ecf26b8c82822d77ce8c
     from article";
     $result = mysqli_query($conn,$sql);  
     $jarr = array();
