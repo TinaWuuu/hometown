@@ -1,8 +1,7 @@
 <?php
     session_start();
-    $id=$_POST["id"];
     $phone=$_SESSION["phone"];
-    $message=$_POST["message"];
+    $title=$_POST["title"];
     include("conn.php");
     //$title=$_POST["title"];
     $sql="select id
@@ -10,21 +9,21 @@
     where phone='$phone'";
     $result = mysqli_query($conn,$sql);  
     $con=mysqli_fetch_row($result);
+    $sqll="select id
+    from article
+    where title='$title'";
+    $res = mysqli_query($conn,$sqll);  
+    $co=mysqli_fetch_row($res);
     //echo $con[0];
-    $sqll="insert into reply(r_id,u_id,message) values('$id','$con[0]','$message')";
-    mysqli_query($conn,$sqll); 
-    // $sql3="select title
+    $sql3="delete from article_c where a_id='$co[0]' and u_id='$con[0]'";
+        // $sql3="select title
     // from message,article
     // where message.id='$id' and article.id=message.a_id";
     // $res = mysqli_query($conn,$sql3);  
     // $con=mysqli_fetch_row($res);
     // echo $con[0];
-    if ($conn->query($sqll) === TRUE){
-<<<<<<< HEAD
+    if ($conn->query($sql3) === TRUE){
         echo "1";
-=======
-        echo $_SESSION["title"];
->>>>>>> c416b68e99b5e201d2d3ecf26b8c82822d77ce8c
     }
     else{
         echo "0";

@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+$(document).ready(function () {
+    var $objfeedback = $("#feedback");//输入框
+    $("#feedback_btn").click(function () {
+        data = {};
+        data.message = $objfeedback.val();//键值对
+        console.log(data);
+        $.post("../php/feedback.php", data, function (data) {
+=======
 $(document).ready(function() {
     $.post("../php/limit.php", function(data) {
         if (data == "0") {
@@ -11,11 +20,17 @@ $(document).ready(function() {
         data.message = $objfeedback.val(); //键值对
         console.log(data);
         $.post("../php/feedback.php", data, function(data) {
+>>>>>>> c416b68e99b5e201d2d3ecf26b8c82822d77ce8c
             //console.log(data);
             if (data == "1") {
                 alert("提交成功");
                 window.location.href = "../html/mine.html";
+<<<<<<< HEAD
+            }
+            else {
+=======
             } else {
+>>>>>>> c416b68e99b5e201d2d3ecf26b8c82822d77ce8c
                 alert("提交失败");
                 window.location.href = "../html/feedback.html";
             }
